@@ -30,7 +30,7 @@ class UnSplashRepository implements IUnSplashRepository {
   Future<UnSplashModel> getUnSplashData(String search) async {
     String response = await wrapper.request(
       ApiConst.unSplashPath,
-      queryParameters: ApiConst.unSplashQuery(page: "1", query: search),
+      queryParameters: ApiConst.unSplashQuery(page: "2", query: search),
       headers: ApiConst.unSplashParams(
         key: Config.unSplashApiKey,
       ),

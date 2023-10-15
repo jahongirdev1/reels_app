@@ -1,10 +1,11 @@
 import '../common/utils/network_image_downloader.dart';
 import '../common/utils/load_into_chache_memory.dart';
-import 'package:flutter/material.dart';
 import '../common/utils/snack_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:reels_app/main.dart';
 
-class PageViewItem extends StatefulWidget {
-  const PageViewItem({
+class SearchPageViewItem extends StatefulWidget {
+  const SearchPageViewItem({
     super.key,
     required this.images,
     required this.downloadLinks,
@@ -14,10 +15,10 @@ class PageViewItem extends StatefulWidget {
   final List<String> downloadLinks;
 
   @override
-  State<PageViewItem> createState() => _PageViewItemState();
+  State<SearchPageViewItem> createState() => _SearchPageViewItemState();
 }
 
-class _PageViewItemState extends State<PageViewItem> {
+class _SearchPageViewItemState extends State<SearchPageViewItem> {
   int downloadPercent = 0;
   double? _progress;
 
@@ -65,6 +66,16 @@ class _PageViewItemState extends State<PageViewItem> {
                           ),
                         ),
                       ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SearchBar(
+                    onChanged: (value) {
+                      setState(() {
+                        controller.searchImage(value);
+                      });
+                    },
+                  ),
+                ),
               ],
             ),
           ),

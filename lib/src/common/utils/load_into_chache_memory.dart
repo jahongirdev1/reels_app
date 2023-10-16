@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-Widget buildImageWidget(String imageUrl) {
-  int? downloadPercent;
+int? downloadPercent;
 
+
+Widget buildImageWidget(String imageUrl) {
   return Image(
     fit: BoxFit.fill,
     loadingBuilder: (context, child, loadingProgress) {

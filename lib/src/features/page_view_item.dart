@@ -32,7 +32,7 @@ class _PageViewItemState extends State<PageViewItem> {
             child: Stack(
               children: [
                 Center(
-                  child: buildImageWidget(index, widget.images[index]),
+                  child: buildImageWidget(widget.images[index]),
                 ),
                 _progress != null
                     ? const CircularProgressIndicator()

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget buildImageWidget(int index, String imageUrl) {
+Widget buildImageWidget(String imageUrl) {
   int? downloadPercent;
 
   return Image(
@@ -17,8 +17,7 @@ Widget buildImageWidget(int index, String imageUrl) {
         return const SizedBox(
           width: 50,
           height: 50,
-          child: 
-          CircularProgressIndicator(
+          child: CircularProgressIndicator(
             strokeWidth: 4.0,
             valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
           ),
